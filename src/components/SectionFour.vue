@@ -223,6 +223,7 @@ Button {
         font-size: 2.25rem;
         line-height: 43px;
     }
+    
 
     .card-container {
         flex-direction: column;
@@ -260,6 +261,11 @@ Button {
     .yearly {
         color: #F5F5F5;
         opacity: 0.5;
+    }
+    .lower-sec h1{
+        font-weight: 900;
+font-size: 36px;
+line-height: 112%;
     }
 }
 </style>
