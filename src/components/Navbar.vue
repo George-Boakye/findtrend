@@ -5,10 +5,10 @@
             <img  class="mobile-logo" src='../assets/mobile-vector.svg' alt="">
         </figure>
         <figure class="menu" @click="displayMenu()">
-            <img class="hamburger"  src="@/assets/harmburger.svg" alt="">
-            <img  class="close" src="@/assets/close-icon.svg" alt="">
+            <img class="hamburger" :class="[toggle? hamburger: '']" src="@/assets/harmburger.svg" alt="">
+            <img  class="close" :class="[toggle? close: '']" src="@/assets/close-icon.svg" alt="">
         </figure>
-        <div class="links m-links" :class="[toggle === true? m-links: '']">
+        <div class="links" :class="[toggle? menu: '', link]">
             <div>
                  <a href="">About</a>
             <a href="">How it works</a>
@@ -30,28 +30,23 @@ export default {
     name: 'Navbar',
     components:{Button},
     data(){
-         
         return{
             toggle:false,
-    
+            menu:"m-links",
+            link: 'links',
+            hamburger:'hambg',
+            close:'close2'
+
+
+
         }
-    
     },
     methods:{
         displayMenu(){
                   this.toggle = !this.toggle
             console.log(this.toggle)
             }
-          
         },
-
-    computed:{
-        display(){
-            
-               return this.toggle
-
-        }
-    }
     }
 </script>
 
@@ -110,8 +105,17 @@ a{
     position: absolute;
     right: 0;
 }
+.hambg{
+    display: none;
+}
 .close{
     display: none;
+}
+.close2{
+display: block;
+}
+.links{
+    display:none;
 }
 .m-links{
     height: 552px;
@@ -121,6 +125,7 @@ a{
     margin-top:104px;
     background-color: #000;
     z-index: 3;
+    display: block;
     /* display: flex;
     flex-direction: row;
     justify-content: space-between;
