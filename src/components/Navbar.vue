@@ -9,7 +9,7 @@
             <img  class="close" :class="[toggle? close: '']" src="@/assets/close-icon.svg" alt="">
         </figure>
         <div class="links" :class="[toggle? menu: '', link]">
-            <div>
+            <div class="container">
                  <a href="">About</a>
             <a href="">How it works</a>
             <a href="">Pricing</a>
@@ -18,6 +18,7 @@
              <a class="right-nav" href="">Login</a>
             <Button text='Register'/>
             </div>
+            <div class="overlay"></div>
         </div>
        
     </nav>
@@ -104,6 +105,7 @@ a{
     display: block;
     position: absolute;
     right: 0;
+    z-index: 5;
 }
 .hambg{
     display: none;
@@ -116,6 +118,20 @@ display: block;
 }
 .links{
     display:none;
+}
+.container{
+    z-index: 10;
+    position: absolute;
+    width:100%;
+}
+.overlay{
+    background-color: #000;
+    position: fixed;
+    left:0;
+    bottom:0;
+    width: 100%;
+    opacity: 0.5;
+    height:100%;
 }
 .m-links{
     height: 552px;
@@ -134,6 +150,7 @@ display: block;
 .logo{
 position: absolute;
 left: 0;
+z-index: 5;
 }
 .logo img{
     width: 100%;
